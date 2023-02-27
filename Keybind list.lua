@@ -10,6 +10,9 @@ local keybind_state_colours = {255, 255, 255, 255} -- the keybind state colour l
 REealFont = draw.CreateFont( "Tahoma", 14, 800 )
 IconFont = draw.CreateFont( "untitled-font-1", 24, 400 )
 
+menu_x = 200
+menu_y = 200
+
 local function waujmujmw()
 if engine.IsGameUIVisible() == false then
 
@@ -31,7 +34,7 @@ if engine.IsGameUIVisible() == false then
 
     end
 
-    if (gui.GetValue( "Crit Hack" ) == "force key") then -- crit hack
+    if (gui.GetValue( "Crit Hack" ) == "force key") or (gui.GetValue( "melee Crit Hack" ) == "force key") then -- crit hack
         if input.IsButtonDown( gui.GetValue( "Crit Hack key" ) ) then
             table.insert(statuses, "Crithack: Held")
         end
@@ -130,3 +133,4 @@ end
 end
 
 callbacks.Register("Draw", "waujmujmw", waujmujmw)
+print(gui.GetValue( "Melee crit hack" ))
