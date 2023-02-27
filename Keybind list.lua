@@ -133,4 +133,3 @@ end
 end
 
 callbacks.Register("Draw", "waujmujmw", waujmujmw)
-print(gui.GetValue( "Melee crit hack" ))
