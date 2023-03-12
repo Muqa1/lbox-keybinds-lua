@@ -43,7 +43,7 @@ if engine.IsGameUIVisible() == false then
 
         local LocalWeapon = entities.GetLocalPlayer():GetPropEntity( "m_hActiveWeapon" )
 
-        if warp.CanDoubleTap(LocalWeapon) then 
+        if (warp.CanDoubleTap(LocalWeapon)) and ((entities.GetLocalPlayer():GetPropInt( "m_fFlags" )) & FL_ONGROUND) == 1 then 
             canDt = " (ready)"
         else
             canDt = " (not ready)"
